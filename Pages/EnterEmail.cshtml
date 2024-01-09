@@ -1,0 +1,25 @@
+﻿@page
+@section scripts {
+	<partial name="_ValidationScriptsPartial" />
+}
+
+@model PracAssignment.Pages.EnterEmailModel
+@{
+}
+
+<div class="container mt-5">
+	<div class="row justify-content-center align-items-center">
+		<div class="col-sm-12 col-md-12 col-lg-4">
+			<form method="post">
+				<div asp-validation-summary="All" class="text-danger"></div>
+				<div class="mb-3">
+					<label class="form-label" asp-for="EModel.Email">Email Address</label>
+					<input type="Text" asp-for="EModel.Email" class="form-control" />
+					<span asp-validaton-for="EModel.Email" class="text-danger"></span>
+				</div>
+
+				<button class="btn btn-primary" asp-page-handler="Reset">Reset Password</button>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,85 @@
+﻿@page
+@section scripts {<partial name="_ValidationScriptsPartial"/>}
+@model PracAssignment.Pages.RegisterModel
+@{
+}
+
+<div class="container mt-5">
+
+	<div class="row justify-content-center align-items-center">
+
+		<div class="col-sm-12 col-md-12 col-lg-4">
+			<h1 class="mb-3">Register </h1>
+
+			<form method="post" enctype="multipart/form-data">
+				<div asp-validation-summary="All" class="text-danger"></div>
+				<div class="mb-3">
+					<label class="form-label" asp-for="RModel.FirstName">First Name</label>
+					<input type="Text" asp-for="RModel.FirstName" class="form-control" />
+					<span asp-validaton-for="RModel.FirstName" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="RModel.LastName">Last Name</label>
+					<input type="Text" asp-for="RModel.LastName" class="form-control" />
+					<span asp-validaton-for="RModel.LastName" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="RModel.Gender">Gender</label>
+					<select asp-for="RModel.Gender" class="form-select">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
+					<span asp-validation-for="RModel.Gender" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="RModel.Nric">Nric</label>
+					<input type="Text" asp-for="RModel.Nric" class="form-control" />
+					<span asp-validaton-for="RModel.Nric" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="RModel.Email">Email Address</label>
+					<input type="Text" asp-for="RModel.Email" class="form-control" />
+					<span asp-validaton-for="RModel.Email" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="RModel.Password">Password</label>
+					<input type="password" asp-for="RModel.Password" class="form-control" />
+					<span asp-validaton-for="RModel.Password" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="RModel.ConfirmPassword">Confirm Password</label>
+					<input type="password" asp-for="RModel.ConfirmPassword" class="form-control" />
+					<span asp-validaton-for="RModel.ConfirmPassword" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="RModel.BirthDate">Date of Birth</label>
+					<input type="date" asp-for="RModel.BirthDate" class="form-control" />
+					<span asp-validaton-for="RModel.BirthDate" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label asp-for="RModel.Resume"></label>
+					<input asp-for="RModel.Resume" type="file" class="form-control" accept=".pdf, .docx" />
+					<span asp-validation-for="RModel.Resume" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="RModel.WhoAmI">Who Am I</label>
+					<input type="Text" asp-for="RModel.WhoAmI" class="form-control" />
+					<span asp-validaton-for="RModel.WhoAmI" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<button type="submit" class="btn btn-primary">Register</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>Welcome, @User.Identity.Name!</p>
+}
+else
+{
+    <p>Not logged in.</p>
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>

@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>User is authenticated!</p>
+    <h2>Welcome, @User.Identity.Name!</h2>
+
+    <dl>
+        <dt>Email:</dt>
+        <dd>@Model.user.Email</dd>
+
+        <dt>First Name:</dt>
+        <dd>@Model.user.FirstName</dd>
+
+        <dt>Last Name:</dt>
+        <dd>@Model.user.LastName</dd>
+
+        <dt>Gender:</dt>
+        <dd>@Model.user.Gender</dd>
+
+        <dt>NRIC:</dt>
+        <dd>@Model.user.Nric</dd>
+
+        <dt>BirthDate</dt>
+        <dd>@Model.user.BirthDate.ToString("dd-MM-yyyy")</dd>
+
+        <dt>Resume</dt>
+        <dd>
+            <form method="post">
+                <button asp-page-handler="DownloadResume" class="btn btn-primary">Download your resume</button>
+            </form>
+        </dd>
+
+        <dt>WhoAmI</dt>
+        <dd>@Model.user.WhoAmI</dd>
+    </dl>
+}
+else
+{
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+    </div>
+}
